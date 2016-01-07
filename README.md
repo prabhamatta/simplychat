@@ -12,14 +12,14 @@ python server.py
 ```
 
 ##Step3
-To start a client, On another terminal
+To start a client, on a new terminal
 ```
 cd simplychat
 python -m SimpleHTTPServer
 ```
 
 ##Step4
-To start another client, On another terminal
+To start another client, on another terminal
 ```
 cd simplychat
 python -m SimpleHTTPServer
