@@ -18,13 +18,11 @@ To start a client, on a new terminal
 cd simplychat
 python -m SimpleHTTPServer
 ```
+In web browser, open `http://localhost:8000/client.html` to chat
+
 
 ##Step4
-To start another client, on another terminal
-```
-cd simplychat
-python -m SimpleHTTPServer
-```
+In another tab, open `http://localhost:8000/client.html` to chat as different client
 
-Now open `http://localhost:8000/client.html` to chat
-####Note: Chrome seems to have some issues with python2.7 websocket_server, try it in safari
+
+####Note: Chrome seems to have some issues with websocket connections. Try it is Safari.
