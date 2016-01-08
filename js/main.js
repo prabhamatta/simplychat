@@ -2,18 +2,19 @@
     var ws;
 
     function init() {
+      var connectionEstablished = false;
       var name = Math.random().toString(36).substr(2,5)
       $("#chatid").text(name);
 
-
       // Connect to Web Socket
-      ws = new WebSocket("ws://localhost:9001/");
+      ws = new WebSocket("ws://0.0.0.0:9001/");
 
       // Set event handlers.
       ws.onopen = function() {
-        json_obj = serverNotification("connected");
-        ws.send(json_obj);
-        output(json_obj);
+        connectionEstablished = true;
+        jsonObj = serverNotification("connected");
+        ws.send(jsonObj);
+        output(jsonObj);
       };
 
       ws.onmessage = function(e) {
@@ -22,14 +23,20 @@
         output(e.data);
       };
 
-      ws.onclose = function() {
-        json_obj = serverNotification("left");
-        output(json_obj);
+      ws.onclose = function(){
+        if (connectionEstablished === true){
+          jsonObj = serverNotification("left");
+        }
+        else{
+          jsonObj = serverNotification("Connection Failed");
+        }
+        document.getElementById("input").disabled=true;
+        output(jsonObj);
       };
 
       ws.onerror = function(e) {
-        json_obj = getMessage("error");
-        output(json_obj);
+        jsonObj = getMessage("error");
+        output(jsonObj);
         console.log(e)
       };
 
@@ -39,8 +46,8 @@
       var mesg = {};
       mesg["name"] = "Server Notification";
       mesg["text"] = document.getElementById("chatid").innerHTML + " " + text;
-      json_obj = JSON.stringify(mesg);
-      return json_obj;
+      jsonObj = JSON.stringify(mesg);
+      return jsonObj;
 
     }
 
@@ -48,23 +55,23 @@
       var mesg = {};
       mesg["name"] = document.getElementById("chatid").innerHTML;
       mesg["text"] = text;
-      json_obj = JSON.stringify(mesg);
-      return json_obj;
+      jsonObj = JSON.stringify(mesg);
+      return jsonObj;
     }
 
     function onSendClick() {
       // debugger;
       var input = document.getElementById("input");
-      json_obj = getMessage(input.value);
-      ws.send(json_obj);
-      output(json_obj);
+      jsonObj = getMessage(input.value);
+      ws.send(jsonObj);
+      output(jsonObj);
       input.value = "";
       input.focus();
     }
 
     function onCloseClick() {
-      json_obj = serverNotification("left");
-      ws.send(json_obj);
+      jsonObj = serverNotification("left");
+      ws.send(jsonObj);
       ws.close();
       document.getElementById("input").disabled=true;
     }
