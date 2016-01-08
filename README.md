@@ -1,11 +1,11 @@
 # SimplyChat
-Python Websocket Chat App
+Python WebSocket Chat App
 
 ##Step1 : Installation
 ```
 git clone https://github.com/prabhamatta/simplychat.git
 cd simplychat
-sudo pip install virtualenv
+virtualenv venv
 source venv/bin/activate
 pip install websocket_server
 ```
@@ -13,6 +13,8 @@ pip install websocket_server
 ##Step2: Running the server
 In a terminal,
 ```
+cd simplychat
+source venv/bin/activate
 python server.py
 ```
 In another terminal,
