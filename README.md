@@ -1,5 +1,5 @@
 # SimplyChat
-Python WebSocket Chat App
+A Simple Python WebSocket Chat App
 
 ##Step1 : Installation
 ```
@@ -28,7 +28,7 @@ Now our server is ready for chatting!!!
 In web browser, open `http://localhost:8000/chat.html` to chat
 
 ##Step4
-To chat as a differnt user,
+To chat as a different user,
 open `http://localhost:8000/chat.html` in another tab
 
 
