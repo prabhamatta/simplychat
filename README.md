@@ -1,13 +1,14 @@
 # SimplyChat
 Python Websocket Chat App
 
-##Step1 
+##Step1
 Download this code
 
-##Step2 
+##Step2
 ```
 cd simplychat
 source venv/bin/activate
+pip install websocket_server
 python server.py
 ```
 

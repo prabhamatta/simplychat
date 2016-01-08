@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Simple client</title>
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body onload="init();">
+<div class="container">
+  <div class="title">Simply Chat</div>
+  <div id="header">
+  <p>
+    You have logged in as <strong id="chatid"> </strong>
+  </p>
+
+  </div>
+    <form onsubmit="onSubmit(); return false;">
+      <input type="text" id="input">
+      <button onclick="onSendClick(); return false;">Send</button>
+      <button onclick="onCloseClick(); return false;">Close Connection</button>
+    </form>
+  <div id="log"></div>
+  </div>
+</body>
+</html>

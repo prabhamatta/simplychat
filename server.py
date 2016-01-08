@@ -10,20 +10,16 @@ def client_left(client, server):
         clients.pop(client['id'])
     except:
         print "Error in removing client %s" % client['id']
-    for cl in clients.values():
-        server.send_message(cl, msg)
 
 
 def new_client(client, server):
     msg = "New client (%s) connected" % client['id']
     print msg
-    for cl in clients.values():
-        server.send_message(cl, msg)
     clients[client['id']] = client
 
 
 def msg_received(client, server, msg):
-    msg = "Client (%s) : %s" % (client['id'], msg)
+    # msg = "Client (%s) : %s" % (client['id'], msg)
     print msg
     clientid = client['id']
     for cl in clients:
