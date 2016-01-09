@@ -15,7 +15,7 @@ In a terminal,
 ```
 cd simplychat
 source venv/bin/activate
-python server.py
+python websocketserver.py
 ```
 In another terminal,
 ```
