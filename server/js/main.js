@@ -7,7 +7,10 @@
       $("#chatid").text(name);
 
       // Connect to Web Socket
-      ws = new WebSocket("ws://0.0.0.0:9001/");
+      var host = "ws://" + document.location.host.split(":")[0] + ":" + "9001/";
+      console.log(host);
+      ws = new WebSocket(host);
+      debugger;
 
       // Set event handlers.
       ws.onopen = function() {
