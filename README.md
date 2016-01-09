@@ -25,11 +25,11 @@ python -m SimpleHTTPServer
 
 ##Step3: Running clients
 Now our server is ready for chatting!!!
-In web browser, open `http://localhost:8000/chat.html` to chat
+In web browser, open `http://localhost:8000` to chat
 
 ##Step4
 To chat as a different user,
-open `http://localhost:8000/chat.html` in another tab
+open `http://localhost:8000` in another tab
 
 
 ####Note: Chrome seems to have some issues with websocket connections. Try it is Safari.
