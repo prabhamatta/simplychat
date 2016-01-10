@@ -45,6 +45,12 @@
 
     }
 
+    // $(window).on("beforeunload", function() {
+    //   jsonObj = serverNotification("left");
+    //   document.getElementById("input").disabled=true;
+    //   output(jsonObj);
+    // })
+
     function serverNotification(text){
       var mesg = {};
       mesg["name"] = "Server Notification";
