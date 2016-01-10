@@ -1,2 +1,2 @@
-*.rb linguist-language=Python
+*.js linguist-language=Python
 server/js/jquery.js linguist-vendored=false
